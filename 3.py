@@ -1,19 +1,25 @@
-import wrap,time
+import wrap,time,random
 s=1000
 v=650
 vp=400
+px2=400
+px3=600
+
 wrap.world.create_world(s,v)
 wrap.sprite.add("mario-items",40,vp,"moving_platform2")
 wrap.sprite.add("mario-items",s-40,vp,"moving_platform2")
-wrap.sprite.add("mario-items",250,vp,"moving_platform2")
-wrap.sprite.add("mario-items",500,vp,"moving_platform2")
+wrap.sprite.add("mario-items",px2,vp,"moving_platform2")
+wrap.sprite.add("mario-items",px3,vp,"moving_platform2")
 wrap.sprite.add("mario-1-big",40,vp-40,"stand")
-
-
-
-
-
-
+z=(px2-40)/2+40
+x=(px3-px2)/2+px2
+c=(s-40-px3)/2+px3
+wrap.actions.move_to(4,z,vp-100)
+wrap.actions.move_to(4,px2,vp-40)
+wrap.actions.move_to(4,x,vp-100)
+wrap.actions.move_to(4,px3,vp-40)
+wrap.actions.move_to(4,c,vp-100)
+wrap.actions.move_to(4,s-40,vp-40)
 
 
 
